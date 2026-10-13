@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pécule · Gestion de budget</title>
+  <meta name="description" content="Pécule : suivez vos revenus et dépenses, fixez des budgets avec alertes, épargnez pour vos projets et anticipez vos fins de mois.">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐷</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="#/tableau"><span class="brand-logo">🐷</span><span class="brand-name">Pécule</span></a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#/tableau" data-nav="tableau"><span class="ni">◫</span><span class="long">Tableau de bord</span><span class="short">Accueil</span></a>
+        <a href="#/operations" data-nav="operations"><span class="ni">⇅</span><span>Opérations</span></a>
+        <a href="#/budgets" data-nav="budgets"><span class="ni">▦</span><span>Budgets</span></a>
+        <a href="#/objectifs" data-nav="objectifs"><span class="ni">◎</span><span>Objectifs</span></a>
+        <a href="#/previsions" data-nav="previsions"><span class="ni">↗</span><span>Prévisions</span></a>
+        <a href="#/economies" data-nav="economies"><span class="ni">✂</span><span>Économies</span></a>
+        <a href="#/placements" data-nav="placements"><span class="ni">▲</span><span>Placements</span></a>
+        <a href="#/reglages" data-nav="reglages" class="nav-settings"><span class="ni">⚙</span><span>Réglages</span></a>
+      </nav>
+      <div class="sidebar-foot">
+        <button class="btn ghost small" data-action="toggle-theme" title="Changer de thème">🌓 Thème</button>
+        <small class="muted">Données stockées sur cet appareil</small>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <h1 id="page-title">Tableau de bord</h1>
+        <div class="topbar-actions">
+          <button class="icon-btn bell" data-action="alerts" aria-label="Alertes">🔔<span id="alert-badge" class="badge" hidden>0</span></button>
+          <a class="icon-btn mobile-only" href="#/reglages" aria-label="Réglages">⚙</a>
+          <button class="btn primary add-btn" data-action="add-tx"><span>+</span><span class="label">Ajouter</span></button>
+        </div>
+      </header>
+      <main id="view" class="view" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toasts" aria-live="polite"></div>
+
+  <script src="js/core.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/views.js"></script>
+  <script>App.init();</script>
+</body>
+</html>
